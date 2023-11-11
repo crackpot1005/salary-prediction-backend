@@ -21,18 +21,7 @@ def predict():
     final_features = [np.array([experience,testScore,interviewScore])]
     prediction = model.predict(final_features)
     output = round(prediction[0],2)
-    # final_features = [np.array(int_features)]
-    # prediction = model.predict(final_features)
-    # output = round(prediction[0],2)
     return str(output)
-
-# @app.route('/predict_api',methods=['POST'])
-# def predict_api():
-#     data = request.get_json(force=True)
-#     prediction = model.predict([np.array(list(data.values()))])
-
-#     output = prediction[0]
-#     return jsonify(output)
 
 if __name__ == "__main__":
     app.run(debug=True)
